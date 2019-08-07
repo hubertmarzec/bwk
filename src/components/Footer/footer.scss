@@ -1,0 +1,99 @@
+.footer {
+  width: 100%;
+  margin: 60px 0 0 0;
+  background-color: black;
+  text-align: center;
+  .container {
+    padding-bottom: 100px;
+    display: flex;
+    align-content: space-between;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: left;
+      margin: 80px 0 30px 0;
+      color: white;
+    }
+    a {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px;
+      text-transform: capitalize;
+      text-align: left;
+      text-decoration: none;
+      color: white;
+    }
+    @media all and(max-width:1000px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      align-content: center;
+
+      h4,
+      p,
+      a {
+        text-align: center;
+      }
+    }
+  }
+  &__directions {
+    display: flex;
+    margin: 0 0 0 7%;
+    width: 75%;
+    align-content: flex-start;
+    &__shortcuts {
+      width: 25%;
+    }
+    &__docs {
+      width: 25%;
+    }
+    &__hot-offers {
+      width: 25%;
+      a {
+        margin-top: 5px;
+        display: block;
+        font-size: 18px;
+        text-transform: capitalize;
+        text-align: left;
+        text-decoration: none;
+        color: white;
+      }
+    }
+    @media all and(max-width:1000px) {
+      width: 100%;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      &__shortcuts,
+      &__docs,
+      &__hot-offers {
+        width: 100%;
+        text-align: center;
+        a {
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__contact {
+    width: 25%;
+    display: block;
+    p {
+      color: white;
+      margin: 5px 0 0 0;
+      text-align: left;
+    }
+    @media all and(max-width:1000px) {
+      width: 100%;
+    }
+  }
+  &__bottom {
+    margin: 0;
+    padding: 35px 0;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+  }
+}

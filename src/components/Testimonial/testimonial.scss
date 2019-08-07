@@ -1,0 +1,29 @@
+.testimonial {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  &__avatar {
+    margin: 0 auto;
+    border-radius: 50%;
+    display: block;
+  }
+  &__signature {
+    margin: 40px auto 0 auto;
+
+    padding: 1rem 0;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__content {
+    margin: 0 auto;
+    padding: 0;
+    width: 74%;
+    font-size: 14px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+}

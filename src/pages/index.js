@@ -1,110 +1,56 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import 'scss/bwk.scss'
-import Layout from 'components/Layout';
-import Feature from 'components/Feature';
-import Testimonial from 'components/Testimonial';
-import OfficeGallery from 'components/OfficeGallery';
-import OfficeDetails from 'components/OfficeDetails';
-import Footer from 'components/Footer';
-import { Title as SectionTitle } from 'components/Section';
-import { Navigation as Dots } from 'components/Slider';
-import ButtonBar from 'components/ButtonBar';
-import { Placeholder } from 'components/UI';
-import logo from '../images/bwk-logo.jpg';
+import Header from '../components/Header';
+import HeaderHeadline from '../components/HeaderHeadline';
+import HeaderButton from '../components/HeaderButton';
+import keyImage from '../images/key.png';
+import Headline from '../components/Headline';
+import AdvantageSection from '../components/AdvantageSection';
+import Testimonials from '../components/Testimonials';
+import { testimonials } from '../source';
+import Footer from '../components/Footer';
 
 const IndexPage = () => (
-  <Layout>
+  <main>
+    <link rel="stylesheet" href="https://use.typekit.net/fdm4ytj.css"></link>
 
-    <section className="bg-dark text-light p-5">
+
+    <Header >
+
+      <HeaderHeadline
+        text="Udogonienia biurowca w prestiżowej kamienicy w centrum miasta."
+      />
+      <HeaderButton
+        image={keyImage}
+        text='Wynajmij biuro'
+      />
+
+    </Header>
+
+
+
+    <div className='container'>
+      <a name="advantages"></a>
       <div className="container">
-        <div className="row">
-          <div className="col-8">
-              <h1 className="text-center mt-5">Udogodnienia biurowca w prestiżowej kamienicy w centrum miasta</h1>
-              <p className="lead text-center text-secondary">Biuro nie jest oderwane od wizerunku firmy</p>
-              <button class="btn btn-primary btn-lg float-right">Wynajmij biuro</button>
-          </div>
-          <div className="col">
-            <img src={logo} className="img-fluid"/>
-          </div>
-        </div>
+        <Headline title="Korzyści" />
+        <AdvantageSection />
       </div>
-    </section>
+    </div>
 
-   <section className="p-3">
-      <SectionTitle>Korzyści</SectionTitle>
-      <div className="container">
-        <div className="row mb-4">
-          <div className="col">
-             <Feature
-              title="Prestiżowa lokalizacja"
-              text=""
-             />
-          </div>
-          <div className="col">
-              <Feature
-                title="Klimatyzacja"
-                text={`
-                  Wszędzie, gdzie istnieje taka możliwość techniczna, 
-                  każdy baginet posiada dedykowaną klimatyzację
-                `}
-              />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-              
-              <Feature
-                title="Kącik socjalny"
-                text="Każde biuro posiada osobną przestrzeń socialną, z ekspresem, minilodówką"
-              />
-          </div>
-          <div className="col">
-              <Feature
-                title="Szybki internet"
-                text="WIFI w całym biurze, prywatne wirtualne sieci. Dodatkowe okablowanie(*) "
-              />
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className='container'>
+      <a name="testimonials"></a>
+      <Headline title='Referencje' />
+      <Testimonials testimonials={testimonials} />
+    </div>
+    <Footer
+      name='Biuro w Kamienicy'
+      address='ul. Lipowa 4a, 20-420 Lublin'
+      nip='725-18-01-126'
+      krs='0000045146'
 
-    <section className="bg-dark text-light p-5">
-      <SectionTitle>Biura</SectionTitle>
-      <div className="container">
-        <div className="row">
-          <div className="col-8">
-            <OfficeGallery/>
-          </div>
-          <div className="col d-flex flex-column">
-            <OfficeDetails/>
-          </div>
-        </div>
-      </div>
-    </section>
+    />
 
-     <section className="p-3">
-      <SectionTitle>Referencje</SectionTitle>
-      <div className="container">
-        <div className="row mb-4">
-          <div className="col">
-             <Testimonial/>
-          </div>
-          <div className="col">
-              <Testimonial />
-          </div>
-        </div>
-      </div>
-      <Dots/>
-    </section>
+  </main>
 
-    <section className="bg-dark text-light">
-      <div className="container">
-        <Footer/>
-      </div>
-      <ButtonBar/>
-    </section>
-
-  </Layout>
 );
 export default IndexPage

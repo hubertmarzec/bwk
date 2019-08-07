@@ -1,34 +1,33 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-const Header = () => (
- 
-  <header>
-     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-        <a className="navbar-brand" href="#">BWK</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">Biura</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Korzyści</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Referencje</a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#">Kontakt</a>
-            </li>
-          </ul>
+import React from 'react';
+import { Link } from 'gatsby';
+import logo from '../../images/logo.png';
+import burger from '../../images/icon-burger.png';
+import './header.scss';
+const Header = ({ children }) => {
+  return (
+    <header className="header">
+      <div className="container container--header">
+        <div className="header__top">
+          <Link to="/"><img src={logo} className="header__top__logo" alt=" Logo " /></Link>
+          <div className="header__top__nav">
+            <ul className="header-nav-bar">
+              <li className="header-nav-bar__item"><Link to="/oferty">Biura</Link></li>
+              <li className="header-nav-bar__item"><Link to="#advantages">Korzyści</Link></li>
+              <li className="header-nav-bar__item"><Link to="/oferty">Kontakt</Link></li>
+              <li className="header-nav-bar__item"><Link to="#testimonials">Referencje</Link></li>
+            </ul>
+            <img className="header__top__nav__burger" src={burger} alt="menu burger icon" /></div>
         </div>
-      </nav>
-  </header>
-)
 
-export default Header
+
+
+        {children}
+
+      </div>
+
+    </header >
+  );
+}
+
+
+export default Header;
